@@ -1,0 +1,12 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #000;
+    font-size: 1.6rem;
+}
+header{
+    height: 1rem;
+    color: rgb(230, 150, 31);
+    background-color: rgb(88, 50, 50);
+}
