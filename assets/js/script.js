@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startGame(){
     document.getElementById('game-start').style.display = "none",
-    document.getElementById('')
+    document.getElementById('game-screen-1').style.display = "flex"
+    document.getElementById('game-options').style.display = "flex"
 
 }
 
