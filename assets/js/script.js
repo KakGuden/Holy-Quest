@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "start") {
                 startGame();
+            } else {
+                let options = this.getAttribute('data-type');
+                options(attackType);
             }
         });
     }
@@ -16,8 +19,9 @@ function startGame(){
     document.getElementById('game-options').style.display = "flex"
 
 }
-
-function attack(){
-    let enemyhpbar = document.getElementById  ("enemy-hp-bar")
-    enemyhpbar.value -= 25;
+function options(attackType){
+    if (options === "attack-button") {
+        let enemyhpbar = document.getElementById("enemy-hp-bar")
+    enemyhpbar.value - 25;
+    }
 }
