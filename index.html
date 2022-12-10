@@ -18,20 +18,52 @@
     </section>
     <section id="game-area">
         <div id="game-start">
-            <button id="start-button">Start Game</button>
+            <button  data-type="start" id="start-button">Start Game</button>
         </div>
         <div id="game-screen-1">
-            <div id="hero-hp">
-                <progress id="hero-hp-bar" value="100" max="100"></progress>
+            <div class="hero-hp">
+                <progress id="herohp-1" value="100" max="100"></progress>
             </div>
             
-            <div id="enemy-hp">
-                <progress id="enemy-hp-bar" value="100" max="100"></progress>
+            <div class="enemy-hp">
+                <progress id="enemyhp-1" value="100" max="100">100</progress>
             </div>
             <div id="hero">
 
             </div>
-            <div id="enemy">
+            <div id="enemy-1">
+
+            </div>
+            
+        </div>
+        <div id="game-screen-2">
+            <div class="hero-hp">
+                <progress id="herohp-2" value="100" max="100"></progress>
+            </div>
+            
+            <div class="enemy-hp">
+                <progress id="enemyhp-2" value="125" max="125"></progress>
+            </div>
+            <div class="hero">
+
+            </div>
+            <div id="enemy-2">
+
+            </div>
+            
+        </div>
+        <div id="game-screen-3">
+            <div class="hero-hp">
+                <progress id="herohp-3" value="100" max="100"></progress>
+            </div>
+            
+            <div class="enemy-hp">
+                <progress id="enemyhp-3" value="150" max="150"></progress>
+            </div>
+            <div class="hero">
+
+            </div>
+            <div id="enemy-3">
 
             </div>
             
@@ -43,11 +75,11 @@
             </button>
             </div>
             <div id="spell-button" class="buttons">
-                <h2>Spell</h2>
+                <button data-type="spell-button">Spell</button>
                 <p>Deals 30dmg</p>
             </div>
             <div id="heal-button" class="buttons">
-                <h2>Heal</h2>
+                <button data-type="heal-button">Heal</button>
                 <p>Heal 30hp</p>
             </div>
             <div>
