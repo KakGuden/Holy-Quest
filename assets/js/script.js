@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (this.getAttribute("data-type") === "start") {
                 startGame();
             } else {
-                let options = this.getAttribute('data-type');
+                let attackType = this.getAttribute("data-type");
                 options(attackType);
             }
-        });
+        }); 
     }
 });
 
@@ -19,9 +19,13 @@ function startGame(){
     document.getElementById('game-options').style.display = "flex"
 
 }
-function options(attackType){
-    if (options === "attack-button") {
-        let enemyhpbar = document.getElementById("enemy-hp-bar")
-    enemyhpbar.value - 25;
+function options(attackType) {
+    if (attackType === "attack-buttons") {
+        attack();
     }
+}
+
+function attack(){
+    let enemyhp = document.getElementById("enemyhp")
+    enemyhp.value -= 10;
 }
