@@ -29,6 +29,8 @@ function options(attackType) {
     }
 }
 var enemyHpFirst = document.getElementById('enemyhp-1')
+var enemyHpSecond = document.getElementById('enemyhp-2')
+var enemyHpThird = document.getElementById('enemyhp-3')
 var heroHpFirst = document.getElementById('herohp-1')
 var defeated = '0';
 
@@ -38,16 +40,36 @@ function attack(){
     if (enemyHpFirst.value == '0'){
         enemyDead(  )
     }
-} 
+} else if (defeated == '1'){
+    enemyHpSecond.value = Number(enemyHpSecond.value) - 10;
+    if (enemyHpSecond.value == '0'){
+        enemyDead(  )
+        }
+    } else if (defeated == '2'){
+        enemyHpThird.value = Number(enemyHpThird.value) - 10;
+        if (enemyHpThird.value == '0'){
+            enemyDead(  )
+            }
+        }
 }
 function spell(){
     if (defeated == '0'){
-    enemyhp.value = Number(enemyhp.value) - 30;
-    if (enemyhp.value == '0'){
-        enemyDead(  )
+        enemyHpFirst.value = Number(enemyHpFirst.value) - 10;
+        if (enemyHpFirst.value == '0'){
+            enemyDead(  )
+        }
+    } else if (defeated == '1'){
+        enemyHpSecond.value = Number(enemyHpSecond.value) - 10;
+        if (enemyHpSecond.value == '0'){
+            enemyDead(  )
+            }
+        } else if (defeated == '2'){
+            enemyHpThird.value = Number(enemyHpThird.value) - 10;
+            if (enemyHpThird.value == '0'){
+                enemyDead(  )
+                }
+            }
     }
-  }
-}
 function heal(){
     let herohp = document.getElementById("herohp")
     herohp.value += 30;
@@ -58,5 +80,10 @@ function enemyDead(){
     document.getElementById('game-screen-2').style.display = "flex"
     defeated = 1;
     console.log(defeated)   
+    } else if (defeated == '1'){
+    document.getElementById('game-screen-2').style.display = "none"
+    document.getElementById('game-screen-3').style.display = "flex"
+    defeated = 2;
+    console.log(defeated)
     }
 };
