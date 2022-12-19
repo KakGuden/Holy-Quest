@@ -37,6 +37,7 @@ var defeated = '0';
 function attack(){
     if (defeated == '0'){
     enemyHpFirst.value = Number(enemyHpFirst.value) - 10;
+
     if (enemyHpFirst.value == '0'){
         enemyDead(  )
     }
@@ -87,3 +88,10 @@ function enemyDead(){
     console.log(defeated)
     }
 };
+function enemyFirstAttack(){
+    heroHpFirst.value = Number(heroHpFirst.value) - 10;
+
+    if (enemyHpFirst.value == '0'){
+        heroDead(  )
+    }
+}
