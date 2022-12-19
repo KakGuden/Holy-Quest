@@ -37,22 +37,28 @@ var defeated = '0';
 function attack(){
     if (defeated == '0'){
     enemyHpFirst.value = Number(enemyHpFirst.value) - 10;
-    document.getElementById("attack-button").disabled = true;
+    cooldownOn();
     if (enemyHpFirst.value == '0'){
         enemyDead( )
     } else {
-        setTimeout(enemyFirstAttack, 20000);
+        setTimeout(enemyFirstAttack, 10000);
     }
 } else if (defeated == '1'){
     enemyHpSecond.value = Number(enemyHpSecond.value) - 10;
+    cooldownOn();
     if (enemyHpSecond.value == '0'){
         enemyDead(  )
+        } else {
+            setTimeout(enemyFirstAttack, 10000);
         }
     } else if (defeated == '2'){
         enemyHpThird.value = Number(enemyHpThird.value) - 10;
+        cooldownOn();
         if (enemyHpThird.value == '0'){
             enemyDead(  )
             }
+        } else {
+            setTimeout(enemyFirstAttack, 10000);
         }
 }
 function spell(){
@@ -92,7 +98,7 @@ function enemyDead(){
 };
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 10;
-    document.getElementById("attack-button").disabled = false;
+    cooldownOff();
     if (heroHpFirst.value == '0'){
         heroDead(  )
     }
@@ -103,6 +109,13 @@ function attackAnimation(){
 function spellAnimation(){
 
 }
-function cooldown(){
-    
+function cooldownOn(){
+    document.getElementById("attack-button").disabled = true;
+    document.getElementById("spell-button").disabled = true;
+    document.getElementById("heal-button").disabled = true;
+}
+function cooldownOff(){
+    document.getElementById("attack-button").disabled = false;
+    document.getElementById("spell-button").disabled = false;
+    document.getElementById("heal-button").disabled = false;
 }
