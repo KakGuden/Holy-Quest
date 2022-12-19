@@ -37,9 +37,11 @@ var defeated = '0';
 function attack(){
     if (defeated == '0'){
     enemyHpFirst.value = Number(enemyHpFirst.value) - 10;
-
+    document.getElementById("attack-button").disabled = true;
     if (enemyHpFirst.value == '0'){
-        enemyDead(  )
+        enemyDead( )
+    } else {
+        setTimeout(enemyFirstAttack, 20000);
     }
 } else if (defeated == '1'){
     enemyHpSecond.value = Number(enemyHpSecond.value) - 10;
@@ -90,8 +92,17 @@ function enemyDead(){
 };
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 10;
-
-    if (enemyHpFirst.value == '0'){
+    document.getElementById("attack-button").disabled = false;
+    if (heroHpFirst.value == '0'){
         heroDead(  )
     }
+}
+function attackAnimation(){
+
+}
+function spellAnimation(){
+
+}
+function cooldown(){
+    
 }
