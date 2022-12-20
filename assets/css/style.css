@@ -18,6 +18,7 @@ header{
     font-size: 3rem;
     text-align: center;
 }
+/** The main area for the game**/
 #game-area{
     display: flex;
     height: 60rem;
@@ -75,13 +76,7 @@ header{
     flex-wrap: wrap;
     display: none;
 }
-.restart-button{
-    text-decoration: none;
-    color: rgb(230, 150, 31);
-}
-.restarter{
-    margin-top: 5rem;
-}
+
 #game-start{
     height: 46rem;
     width: 70rem;
@@ -96,6 +91,7 @@ header{
     width: 25rem;
     height: 8rem;
 }
+/** player and enemys **/
 .hero-hp{
     margin-top: 1rem;
     width: 50%;
@@ -118,6 +114,7 @@ header{
     width: 50%;
     height: 3rem;
 }
+/** button holder **/
 #game-options{
     display: none;
     width: 70rem;
@@ -131,6 +128,14 @@ header{
     margin-top: 0.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+/** Buttons for attacks and restart **/
+.restart-button{
+    text-decoration: none;
+    color: rgb(230, 150, 31);
+}
+.restarter{
+    margin-top: 5rem;
 }
 .buttons{
     width: 15rem;
