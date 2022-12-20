@@ -128,6 +128,7 @@ header{
 }
 #game-options h2{
     font-size: 3rem;
+    margin-top: 0.5rem;
     padding-left: 2rem;
     padding-right: 2rem;
 }
@@ -136,9 +137,18 @@ header{
     margin-left: 5%;
     margin-right: 5%;
     text-align: center;
-    color: rgb(230, 150, 31);
     font-size: 3rem;
 }
 #attack-button{
-    background-color: rgb(230, 150, 31);;
+    background-color: rgb(230, 150, 31);
+}
+#spell-button{
+    background-color: rgb(230, 150, 31);
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+#heal-button{
+    background-color: rgb(230, 150, 31);
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
