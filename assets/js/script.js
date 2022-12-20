@@ -52,6 +52,7 @@ function attack(){
     }
     } else if (defeated == '1'){
     enemyHpSecond.value = Number(enemyHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
+    document.getElementById("enemy-hp-number-2").innerHTML = enemyHpSecond.value;
     cooldownOn();
     if (enemyHpSecond.value == '0'){
         enemyDead(  )
@@ -60,6 +61,7 @@ function attack(){
         }
     } else if (defeated == '2'){
         enemyHpThird.value = Number(enemyHpThird.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
+        document.getElementById("enemy-hp-number-3").innerHTML = enemyHpThird.value;
         cooldownOn();
         if (enemyHpThird.value == '0'){
             enemyDead(  )
@@ -71,6 +73,7 @@ function attack(){
 function spell(){
     if (defeated == '0'){
         enemyHpFirst.value = Number(enemyHpFirst.value) - 30;
+        document.getElementById("enemy-hp-number-1").innerHTML = enemyHpFirst.value;
         cooldownOn();
         if (enemyHpFirst.value == '0'){
             enemyDead(  )
@@ -79,6 +82,7 @@ function spell(){
         }
     } else if (defeated == '1'){
         enemyHpSecond.value = Number(enemyHpSecond.value) - 30;
+        document.getElementById("enemy-hp-number-2").innerHTML = enemyHpSecond.value;
         cooldownOn();
         if (enemyHpSecond.value == '0'){
             enemyDead(  )
@@ -87,6 +91,7 @@ function spell(){
             }
         } else if (defeated == '2'){
             enemyHpThird.value = Number(enemyHpThird.value) - 30;
+            document.getElementById("enemy-hp-number-3").innerHTML = enemyHpThird.value;
             cooldownOn();
             if (enemyHpThird.value == '0'){
                 enemyDead(  )
@@ -96,9 +101,24 @@ function spell(){
         }
 }
 function heal(){
-    let herohp = document.getElementById("herohp")
-    herohp.value += 30;
+    if (defeated == '0'){
+        heroHpFirst.value = Number(heroHpFirst.value) + 30;
+        document.getElementById("hero-hp-number-1").innerHTML = heroHpFirst.value;
+        cooldownOn();
+        setTimeout(enemyFirstAttack, 10000);
+    } else if (defeated == '1'){
+    heroHpSecond.value = Number(heroHpSecond.value) + 30;
+        document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
+        cooldownOn();
+        setTimeout(enemySecondAttackThree, 10000);
+    } else if (defeated == '2'){
+        heroHpThird.value = Number(heroHpThird.value) + 30;
+        document.getElementById("hero-hp-number-3").innerHTML = heroHpThird.value;
+        cooldownOn();
+        setTimeout(enemyThirdAttack, 10000);
+    }
 }
+
 function enemyDead(){
     if (defeated == '0'){
     document.getElementById('game-screen-1').style.display = "none"
@@ -123,6 +143,7 @@ function enemyFirstAttack(){
 }
 function enemySecondAttackOne(){
     heroHpSecond.value = Number(heroHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
+    document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -130,6 +151,7 @@ function enemySecondAttackOne(){
 }
 function enemySecondAttackTwo(){
     heroHpSecond.value = Number(heroHpSecond.value) - 30;
+    document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
