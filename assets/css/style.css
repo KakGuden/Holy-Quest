@@ -50,6 +50,32 @@ header{
     flex-wrap: wrap;
     display: none;
 }
+#intro-2{
+    height: 40rem;
+    width: 70rem;
+    margin-top: 5rem;
+    background-color: rgb(58, 85, 108);
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+    position: absolute;
+}
+#intro-3{
+    height: 40rem;
+    width: 70rem;
+    margin-top: 5rem;
+    background-color: rgb(58, 85, 108);
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+    position: absolute;
+}
 #game-screen-2{
     height: 40rem;
     width: 70rem;
@@ -71,6 +97,32 @@ header{
     flex-direction: row;
     flex-wrap: wrap;
     display: none;
+}
+#end-screen-1{
+    height: 40rem;
+    width: 70rem;
+    margin-top: 5rem;
+    background-color: rgb(58, 85, 108);
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+    position: absolute;
+}
+#end-screen-2{
+    height: 40rem;
+    width: 70rem;
+    margin-top: 5rem;
+    background-color: rgb(58, 85, 108);
+    text-align: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: none;
+    position: absolute;
 }
 #game-start{
     height: 46rem;

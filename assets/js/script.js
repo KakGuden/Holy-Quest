@@ -129,17 +129,43 @@ function heal(){
 function enemyDead(){
     if (defeated == '0'){
     document.getElementById('game-screen-1').style.display = "none"
-    document.getElementById('game-screen-2').style.display = "flex"
+    document.getElementById('game-options').style.display = "none"
+    document.getElementById('intro-2').style.display = "flex"
     defeated = 1;
     console.log(defeated)  
     cooldownOff()
+    setTimeout(gameScreenTwo, 10000)
     } else if (defeated == '1'){
     document.getElementById('game-screen-2').style.display = "none"
-    document.getElementById('game-screen-3').style.display = "flex"
+    document.getElementById('game-options').style.display = "none"
+    document.getElementById('intro-3').style.display = "flex"
     defeated = 2;
     console.log(defeated)
     cooldownOff()
+    setTimeout(gameScreenThree, 10000)
+    } else if (defeated == '2'){
+        document.getElementById('game-screen-3').style.display = "none"
+        document.getElementById('game-options').style.display = "none"
+        document.getElementById('end-screen-1').style.display = "flex"
+        defeated = 0;
+        console.log(defeated)
+        cooldownOff()
+        setTimeout(endScreen, 10000)
     }
+}
+function gameScreenTwo(){
+    document.getElementById('intro-2').style.display = "none"
+    document.getElementById('game-screen-2').style.display = "flex"
+    document.getElementById('game-options').style.display = "flex"
+}
+function gameScreenThree(){
+    document.getElementById('intro-3').style.display = "none"
+    document.getElementById('game-screen-3').style.display = "flex"
+    document.getElementById('game-options').style.display = "flex"
+}
+function endScreen(){
+    document.getElementById('end-screen-1').style.display = "none"
+    document.getElementById('end-screen-2').style.display = "flex"
 }
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 20;
