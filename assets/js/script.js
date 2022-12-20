@@ -216,7 +216,7 @@ function enemyThirdAttack(){
         heroDead(  )
     }
 }
-
+/** Making the attacks feel better with effects and cooldown */
 function attackAnimation(){
 
 }
