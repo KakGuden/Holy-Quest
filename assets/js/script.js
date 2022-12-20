@@ -43,6 +43,7 @@ var defeated = '0';
 function attack(){
     if (defeated == '0'){
     enemyHpFirst.value = Number(enemyHpFirst.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
+    document.getElementById("enemy-hp-number-1").innerHTML = enemyHpFirst.value;
     cooldownOn();
     if (enemyHpFirst.value == '0'){
         enemyDead( )
@@ -114,6 +115,7 @@ function enemyDead(){
 }
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 20;
+    document.getElementById("hero-hp-number-1").innerHTML = heroHpFirst.value;
     cooldownOff();
     if (heroHpFirst.value == '0'){
         heroDead(  )
