@@ -75,11 +75,11 @@ header{
     flex-wrap: wrap;
     display: none;
 }
-#restart-button{
+.restart-button{
     text-decoration: none;
     color: rgb(230, 150, 31);
 }
-#restarter{
+.restarter{
     margin-top: 5rem;
 }
 #game-start{
@@ -97,7 +97,7 @@ header{
     height: 8rem;
 }
 .hero-hp{
-    margin-top: 5rem;
+    margin-top: 1rem;
     width: 50%;
     height: 3rem;
 }
@@ -114,7 +114,7 @@ header{
     height: 30rem;
 }
 .enemy-hp{
-    margin-top: 5rem;
+    margin-top: 1rem;
     width: 50%;
     height: 3rem;
 }

@@ -125,7 +125,7 @@ function heal(){
         setTimeout(enemyThirdAttack, 10000);
     }
 }
-
+/** screen changers */
 function enemyDead(){
     if (defeated == '0'){
     document.getElementById('game-screen-1').style.display = "none"
@@ -153,6 +153,14 @@ function enemyDead(){
         setTimeout(endScreen, 10000)
     }
 }
+function heroDead(){
+    document.getElementById('game-screen-1').style.display = "none"
+    document.getElementById('game-screen-2').style.display = "none"
+    document.getElementById('game-screen-3').style.display = "none"
+    document.getElementById('game-options').style.display = "none"
+    document.getElementById('lose-screen').style.display = "flex"
+}
+
 function gameScreenTwo(){
     document.getElementById('intro-2').style.display = "none"
     document.getElementById('game-screen-2').style.display = "flex"
@@ -167,6 +175,7 @@ function endScreen(){
     document.getElementById('end-screen-1').style.display = "none"
     document.getElementById('end-screen-2').style.display = "flex"
 }
+/** Enemy attacks */
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 20;
     document.getElementById("hero-hp-number-1").innerHTML = heroHpFirst.value;
