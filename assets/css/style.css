@@ -124,17 +124,21 @@ header{
     background-color: rgb(8, 38, 64);
     color: rgb(230, 150, 31);
     height: 6rem;
+    
 }
 #game-options h2{
     font-size: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 .buttons{
-    width: 20rem;
+    width: 15rem;
     margin-left: 5%;
     margin-right: 5%;
-    border: 1px #fff solid;
     text-align: center;
     color: rgb(230, 150, 31);
     font-size: 3rem;
-    padding: 1rem;
+}
+#attack-button{
+    background-color: rgb(230, 150, 31);;
 }
