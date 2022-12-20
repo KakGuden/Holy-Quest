@@ -82,15 +82,17 @@ function spell(){
         if (enemyHpSecond.value == '0'){
             enemyDead(  )
             } else{
-                setTimeout(enemyFirstAttack, 10000);
+                setTimeout(enemySecondAttackTwo, 10000);
             }
         } else if (defeated == '2'){
             enemyHpThird.value = Number(enemyHpThird.value) - 30;
             cooldownOn();
             if (enemyHpThird.value == '0'){
                 enemyDead(  )
-                }
+                } else{
+                setTimeout(enemyFirstAttack, 10000);
             }
+        }
 }
 function heal(){
     let herohp = document.getElementById("herohp")
@@ -125,14 +127,14 @@ function enemySecondAttackOne(){
     }
 }
 function enemySecondAttackTwo(){
-    heroHpSecond.value = Number(heroHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
+    heroHpSecond.value = Number(heroHpSecond.value) - 30;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
     }
 }
 function enemySecondAttackThree(){
-    heroHpSecond.value = Number(heroHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
+    enemyHpSecond.value = Number(enemyHpSecond.value) + 30;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
