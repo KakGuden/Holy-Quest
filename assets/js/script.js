@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === "start") {
-                startGame();
+                intro();
             } else {
                 let attackType = this.getAttribute("data-type");
                 options(attackType);
@@ -13,8 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+function intro(){
+    document.getElementById('game-start').style.display = "none"
+    document.getElementById('intro').style.display = 'flex'
+    setTimeout(startGame, 10000)
+}
+
 function startGame(){
-    document.getElementById('game-start').style.display = "none",
+    document.getElementById('intro').style.display = 'none'
     document.getElementById('game-screen-1').style.display = "flex"
     document.getElementById('game-options').style.display = "flex"
 
@@ -48,7 +54,7 @@ function attack(){
     if (enemyHpFirst.value == '0'){
         enemyDead( )
     } else {
-        setTimeout(enemyFirstAttack, 10000);
+        setTimeout(enemyFirstAttack, 1000);
     }
     } else if (defeated == '1'){
     enemyHpSecond.value = Number(enemyHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
@@ -57,7 +63,7 @@ function attack(){
     if (enemyHpSecond.value == '0'){
         enemyDead(  )
         } else {
-            setTimeout(enemySecondAttackOne, 10000);
+            setTimeout(enemySecondAttackOne, 1000);
         }
     } else if (defeated == '2'){
         enemyHpThird.value = Number(enemyHpThird.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
@@ -66,9 +72,10 @@ function attack(){
         if (enemyHpThird.value == '0'){
             enemyDead(  )
             }
-        } else {
-            setTimeout(enemyThirdAttack, 10000);
+         else {
+            setTimeout(enemyThirdAttack, 1000);
         }
+    }
 }
 function spell(){
     if (defeated == '0'){
@@ -96,7 +103,7 @@ function spell(){
             if (enemyHpThird.value == '0'){
                 enemyDead(  )
                 } else{
-                setTimeout(enemyFirstAttack, 10000);
+                setTimeout(enemyThirdAttack, 10000);
             }
         }
 }
@@ -131,6 +138,7 @@ function enemyDead(){
     document.getElementById('game-screen-3').style.display = "flex"
     defeated = 2;
     console.log(defeated)
+    cooldownOff()
     }
 }
 function enemyFirstAttack(){
@@ -159,8 +167,17 @@ function enemySecondAttackTwo(){
 }
 function enemySecondAttackThree(){
     enemyHpSecond.value = Number(enemyHpSecond.value) + 30;
+    document.getElementById("enemy-hp-number-2").innerHTML = enemyHpSecond.value;
     cooldownOff();
     if (heroHpSecond.value == '0'){
+        heroDead(  )
+    }
+}
+function enemyThirdAttack(){
+    heroHpThird.value = Number(heroHpThird.value) - 25;
+    document.getElementById("hero-hp-number-3").innerHTML = heroHpThird.value;
+    cooldownOff();
+    if (heroHpThird.value == '0'){
         heroDead(  )
     }
 }

@@ -20,12 +20,20 @@
         <div id="game-start">
             <button  data-type="start" id="start-button">Start Game</button>
         </div>
+        <div id="intro">
+            <h1>You felt a barbed sword pierce your armor from behind as you feel to the ground.</h1>
+            <h2>Suddenly you feel a surge of energy enter your body and you realise your holy god had brought you back to slay these undead abominations.</h2>
+        </div>
         <div id="game-screen-1">
             <div class="hero-hp">
+                <h3>Hero</h3>
+                <h3 id="hero-hp-number-1">100</h3>
                 <progress id="herohp-1" value="100" max="100"></progress>
             </div>
             
             <div class="enemy-hp">
+                <h3>Undead</h3>
+                <h3 id="enemy-hp-number-1">100</h3>
                 <progress id="enemyhp-1" value="100" max="100">100</progress>
             </div>
             <div id="hero">
@@ -38,26 +46,32 @@
         </div>
         <div id="game-screen-2">
             <div class="hero-hp">
+                <h3>Hero</h3>
+                <h3 id="hero-hp-number-2">100</h3>
                 <progress id="herohp-2" value="100" max="100"></progress>
             </div>
             
             <div class="enemy-hp">
-                <progress id="enemyhp-2" value="125" max="125"></progress>
+                <h3>Mimic</h3>
+                <h3 id="enemy-hp-number-2">121</h3>
+                <progress id="enemyhp-2" value="121" max="121"></progress>
             </div>
             <div class="hero">
-
+            
             </div>
-            <div id="enemy-2">
-
-            </div>
+            <div id="enemy-2"></div>
             
         </div>
         <div id="game-screen-3">
             <div class="hero-hp">
+                <h3>Hero</h3>
+                <h3 id="hero-hp-number-3">100</h3>
                 <progress id="herohp-3" value="100" max="100"></progress>
             </div>
             
             <div class="enemy-hp">
+                <h3>Boss</h3>
+                <h3 id="enemy-hp-number-3">150</h3>
                 <progress id="enemyhp-3" value="150" max="150"></progress>
             </div>
             <div class="hero">
@@ -69,17 +83,17 @@
             
         </div>
         <div id="game-options">
-            <div id="attack-button" class="buttons">
-                <button data-type="attack-button"><h2>Attack</h2>
+            <div id="attack-option" class="buttons">
+                <button  id="attack-button" data-type="attack-button" ><h2>Attack</h2>
                 <p>Deals 20-40dmg</p>
             </button>
             </div>
-            <div id="spell-button" class="buttons">
-                <button data-type="spell-button">Spell</button>
+            <div id="spell-option" class="buttons">
+                <button id="spell-button" data-type="spell-button">Spell</button>
                 <p>Deals 30dmg</p>
             </div>
-            <div id="heal-button" class="buttons">
-                <button data-type="heal-button">Heal</button>
+            <div id="heal-option" class="buttons">
+                <button id="heal-button" data-type="heal-button">Heal</button>
                 <p>Heal 30hp</p>
             </div>
             <div>
