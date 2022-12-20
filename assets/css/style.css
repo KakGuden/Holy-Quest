@@ -26,19 +26,20 @@ header{
     align-items: center;
     flex-direction: column;
 }
-#intro{
+.game-screens{
     height: 40rem;
     width: 70rem;
     margin-top: 5rem;
     background-color: rgb(58, 85, 108);
     text-align: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     flex-direction: column;
     flex-wrap: wrap;
     display: none;
     position: absolute;
 }
+
 #game-screen-1{
     height: 40rem;
     width: 70rem;
@@ -50,32 +51,8 @@ header{
     flex-wrap: wrap;
     display: none;
 }
-#intro-2{
-    height: 40rem;
-    width: 70rem;
-    margin-top: 5rem;
-    background-color: rgb(58, 85, 108);
-    text-align: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    display: none;
-    position: absolute;
-}
-#intro-3{
-    height: 40rem;
-    width: 70rem;
-    margin-top: 5rem;
-    background-color: rgb(58, 85, 108);
-    text-align: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    display: none;
-    position: absolute;
-}
+
+
 #game-screen-2{
     height: 40rem;
     width: 70rem;
@@ -98,31 +75,12 @@ header{
     flex-wrap: wrap;
     display: none;
 }
-#end-screen-1{
-    height: 40rem;
-    width: 70rem;
-    margin-top: 5rem;
-    background-color: rgb(58, 85, 108);
-    text-align: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    display: none;
-    position: absolute;
+#restart-button{
+    text-decoration: none;
+    color: rgb(230, 150, 31);
 }
-#end-screen-2{
-    height: 40rem;
-    width: 70rem;
+#restarter{
     margin-top: 5rem;
-    background-color: rgb(58, 85, 108);
-    text-align: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    display: none;
-    position: absolute;
 }
 #game-start{
     height: 46rem;
@@ -134,7 +92,7 @@ header{
 #start-button{
     font-size: 4rem;
     margin: 20%;
-    background-color: orange;
+    background-color: rgb(230, 150, 31);
     width: 25rem;
     height: 8rem;
 }
@@ -164,7 +122,11 @@ header{
     display: none;
     width: 70rem;
     background-color: rgb(8, 38, 64);
+    color: rgb(230, 150, 31);
     height: 6rem;
+}
+#game-options h2{
+    font-size: 3rem;
 }
 .buttons{
     width: 20rem;
@@ -172,4 +134,7 @@ header{
     margin-right: 5%;
     border: 1px #fff solid;
     text-align: center;
+    color: rgb(230, 150, 31);
+    font-size: 3rem;
+    padding: 1rem;
 }
