@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function intro(){
     document.getElementById('game-start').style.display = "none"
     document.getElementById('intro').style.display = 'flex'
-    setTimeout(startGame, 10000)
+    setTimeout(startGame, 12000)
 }
 
 function startGame(){
@@ -54,7 +54,7 @@ function attack(){
     if (enemyHpFirst.value == '0'){
         enemyDead( )
     } else {
-        setTimeout(enemyFirstAttack, 1000);
+        setTimeout(enemyFirstAttack, 5000);
     }
     } else if (defeated == '1'){
     enemyHpSecond.value = Number(enemyHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
@@ -63,7 +63,7 @@ function attack(){
     if (enemyHpSecond.value == '0'){
         enemyDead(  )
         } else {
-            setTimeout(enemySecondAttackOne, 1000);
+            setTimeout(enemySecondAttackOne, 5000);
         }
     } else if (defeated == '2'){
         enemyHpThird.value = Number(enemyHpThird.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
@@ -73,7 +73,7 @@ function attack(){
             enemyDead(  )
             }
          else {
-            setTimeout(enemyThirdAttack, 1000);
+            setTimeout(enemyThirdAttack, 5000);
         }
     }
 }
@@ -85,7 +85,7 @@ function spell(){
         if (enemyHpFirst.value == '0'){
             enemyDead(  )
         } else {
-            setTimeout(enemyFirstAttack, 10000);
+            setTimeout(enemyFirstAttack, 5000);
         }
     } else if (defeated == '1'){
         enemyHpSecond.value = Number(enemyHpSecond.value) - 30;
@@ -94,7 +94,7 @@ function spell(){
         if (enemyHpSecond.value == '0'){
             enemyDead(  )
             } else{
-                setTimeout(enemySecondAttackTwo, 10000);
+                setTimeout(enemySecondAttackTwo, 5000);
             }
         } else if (defeated == '2'){
             enemyHpThird.value = Number(enemyHpThird.value) - 30;
@@ -103,7 +103,7 @@ function spell(){
             if (enemyHpThird.value == '0'){
                 enemyDead(  )
                 } else{
-                setTimeout(enemyThirdAttack, 10000);
+                setTimeout(enemyThirdAttack, 5000);
             }
         }
 }
@@ -112,17 +112,17 @@ function heal(){
         heroHpFirst.value = Number(heroHpFirst.value) + 30;
         document.getElementById("hero-hp-number-1").innerHTML = heroHpFirst.value;
         cooldownOn();
-        setTimeout(enemyFirstAttack, 10000);
+        setTimeout(enemyFirstAttack, 5000);
     } else if (defeated == '1'){
     heroHpSecond.value = Number(heroHpSecond.value) + 30;
         document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
         cooldownOn();
-        setTimeout(enemySecondAttackThree, 10000);
+        setTimeout(enemySecondAttackThree, 5000);
     } else if (defeated == '2'){
         heroHpThird.value = Number(heroHpThird.value) + 30;
         document.getElementById("hero-hp-number-3").innerHTML = heroHpThird.value;
         cooldownOn();
-        setTimeout(enemyThirdAttack, 10000);
+        setTimeout(enemyThirdAttack, 5000);
     }
 }
 /** screen changers */
