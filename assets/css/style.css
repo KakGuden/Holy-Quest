@@ -113,6 +113,12 @@ header{
     width: 30%;
     height: 30rem;
 }
+.hero-animation{
+    width: 100%;
+}
+.enemy-animation{
+    width: 100%;
+}
 #enemy-1{
     background: url(../images/Undead1.png) no-repeat center center;
 }
