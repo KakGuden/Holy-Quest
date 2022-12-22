@@ -43,10 +43,18 @@ My goal is to creat a simple game that works as intended without any bugs or unw
 ### 3 diffrent attack options
 
 # Testing
-Everything works as it should without problem and it responds to diffrent screen sizes without any problem
+ Have played it multiple times and made sure everything works as intended
 
-## Lighthouse
 
 ## Validator Test
 
 ### Html
+* No problems when going through The Officlal W3C Validator
+### Css
+* No problems when going through The Officlal (Jigsaw) Validator
+
+## Unfixed Bugs
+ There are no unfixed bugs
+
+# Deployment 
+Deployed on GitHub pages by going into the repository settings and finding the page tab and selecting the master branch
