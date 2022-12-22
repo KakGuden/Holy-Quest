@@ -52,8 +52,6 @@ function options(attackType) {
         heal();
     }
 }
-/** Hp and "lvl" values*/
-
 
 /** Attack funtions */
 
@@ -145,7 +143,9 @@ function heal(){
         setTimeout(enemyThirdAttack, 5000);
     }
 }
+
 /** screen changers */
+
 function enemyDead(){
     if (defeated == '0'){
     gameScreensRef[1].style.display = "none";
@@ -191,7 +191,9 @@ function endScreen(){
     introScreensRef[3].style.display = "none";
     introScreensRef[4].style.display = "flex";
 }
+
 /** Enemy attacks */
+
 function enemyFirstAttack(){
     heroHpRef[0].value = Number(heroHpRef[0].value) - 20;
     heroHpNumberRef[0].innerHTML = heroHpRef[0].value;
@@ -291,7 +293,7 @@ function animationsOff(){
         heroAttackEffect[2].src = "assets/images/Clear.png";
     }
 }
-
+/** Cooldown for attacks */
 function cooldownOn(){
     cooldownOptionsRef[0].disabled = true;
     cooldownOptionsRef[1].disabled = true;
