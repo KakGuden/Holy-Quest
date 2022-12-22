@@ -17,7 +17,7 @@ const enemyHpThird = document.getElementById('enemyhp-3')
 const enemyHpThirdRef = document.getElementById("enemy-hp-number-3")
 /** Attack Effects */
 const enemyAttackEffect = document.querySelectorAll(".enemy-animation")
-const heroAttackEffect = document.getElementsByClassName('hero-animation')
+const heroAttackEffect = document.querySelectorAll('.hero-animation')
 /** Hero Hp */
 const heroHpFirst = document.getElementById('herohp-1')
 const heroHpFirstRef = document.getElementById("hero-hp-number-1")
@@ -97,6 +97,7 @@ function attack(){
     } else if (defeated == '2'){
         enemyHpThird.value = Number(enemyHpThird.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
         enemyHpThirdRef.innerHTML = enemyHpThird.value;
+        attackAnimation();
         cooldownOn();
         if (enemyHpThird.value == '0'){
             enemyDead(  )
@@ -111,6 +112,7 @@ function spell(){
         enemyHpFirst.value = Number(enemyHpFirst.value) - 30;
         enemyHpFirstRef.innerHTML = enemyHpFirst.value;
         cooldownOn();
+        spellAnimation();
         if (enemyHpFirst.value == '0'){
             enemyDead(  )
         } else {
@@ -120,6 +122,7 @@ function spell(){
         enemyHpSecond.value = Number(enemyHpSecond.value) - 30;
         enemyHpTwoRef.innerHTML = enemyHpSecond.value;
         cooldownOn();
+        spellAnimation();
         if (enemyHpSecond.value == '0'){
             enemyDead(  )
             } else{
@@ -128,6 +131,7 @@ function spell(){
         } else if (defeated == '2'){
             enemyHpThird.value = Number(enemyHpThird.value) - 30;
             enemyHpThirdRef.innerHTML = enemyHpThird.value;
+            spellAnimation();
             cooldownOn();
             if (enemyHpThird.value == '0'){
                 enemyDead(  )
@@ -139,17 +143,20 @@ function spell(){
 function heal(){
     if (defeated == '0'){
         heroHpFirst.value = Number(heroHpFirst.value) + 30;
-        enemyHpFirstRef.innerHTML = heroHpFirst.value;
+        heroHpFirstRef.innerHTML = heroHpFirst.value;
+        healAnimation();
         cooldownOn();
         setTimeout(enemyFirstAttack, 5000);
     } else if (defeated == '1'){
     heroHpSecond.value = Number(heroHpSecond.value) + 30;
-    enemyHpTwoRef.innerHTML = heroHpSecond.value;
+    heroHpTwoRef.innerHTML = heroHpSecond.value;
+        healAnimation();
         cooldownOn();
         setTimeout(enemySecondAttackThree, 5000);
     } else if (defeated == '2'){
         heroHpThird.value = Number(heroHpThird.value) + 30;
-        enemyHpThirdRef.innerHTML = heroHpThird.value;
+        heroHpThirdRef.innerHTML = heroHpThird.value;
+        healAnimation();
         cooldownOn();
         setTimeout(enemyThirdAttack, 5000);
     }
@@ -208,6 +215,8 @@ function endScreen(){
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 20;
     heroHpFirstRef.innerHTML = heroHpFirst.value;
+    heroAttackEffect[0].src = "assets/images/Attack.png"
+    setTimeout(animationsOff, 500)
     cooldownOff();
     if (heroHpFirst.value == '0'){
         heroDead(  )
@@ -216,6 +225,8 @@ function enemyFirstAttack(){
 function enemySecondAttackOne(){
     heroHpSecond.value = Number(heroHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
     heroHpTwoRef.innerHTML = heroHpSecond.value;
+    heroAttackEffect[1].src = "assets/images/Attack.png"
+    setTimeout(animationsOff, 500)
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -224,6 +235,8 @@ function enemySecondAttackOne(){
 function enemySecondAttackTwo(){
     heroHpSecond.value = Number(heroHpSecond.value) - 30;
     heroHpTwoRef.innerHTML = heroHpSecond.value;
+    heroAttackEffect[1].src = "assets/images/Spell.png"
+    setTimeout(animationsOff, 500)
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -232,6 +245,8 @@ function enemySecondAttackTwo(){
 function enemySecondAttackThree(){
     enemyHpSecond.value = Number(enemyHpSecond.value) + 30;
     enemyHpTwoRef.innerHTML = enemyHpSecond.value;
+    enemyAttackEffect[1].src = "assets/images/Heal.png"
+    setTimeout(animationsOff, 500)
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -240,6 +255,8 @@ function enemySecondAttackThree(){
 function enemyThirdAttack(){
     heroHpThird.value = Number(heroHpThird.value) - 25;
     heroHpThirdRef.innerHTML = heroHpThird.value;
+    heroAttackEffect[2].src = "assets/images/Spell.png"
+    setTimeout(animationsOff, 500)
     cooldownOff();
     if (heroHpThird.value == '0'){
         heroDead(  )
@@ -249,25 +266,49 @@ function enemyThirdAttack(){
 function attackAnimation(){
     if (defeated == '0'){
         enemyAttackEffect[0].src = "assets/images/Attack.png"
-        setTimeout(animationsOff, 1000)
+        setTimeout(animationsOff, 500)
     } else if (defeated == '1'){
         enemyAttackEffect[1].src = "assets/images/Attack.png"
-        setTimeout(animationsOff, 1000)
-    } else if (defeated == '2'){
+        setTimeout(animationsOff, 500)
+    } else  if (defeated == '2'){
         enemyAttackEffect[2].src = "assets/images/Attack.png"
-        setTimeout(animationsOff, 1000)
+        setTimeout(animationsOff, 500)
     }
 }
 function spellAnimation(){
-    
+    if (defeated == '0'){
+        enemyAttackEffect[0].src = "assets/images/Spell.png"
+        setTimeout(animationsOff, 500)
+    } else if (defeated == '1'){
+        enemyAttackEffect[1].src = "assets/images/Spell.png"
+        setTimeout(animationsOff, 500)
+    } else if (defeated == '2'){
+        enemyAttackEffect[2].src = "assets/images/Spell.png"
+        setTimeout(animationsOff, 500)
+    }
+}
+function healAnimation(){
+    if (defeated == '0'){
+        heroAttackEffect[0].src = "assets/images/Heal.png"
+        setTimeout(animationsOff, 500)
+    } else if (defeated == '1'){
+        heroAttackEffect[1].src = "assets/images/Heal.png"
+        setTimeout(animationsOff, 500)
+    } else  if (defeated == '2'){
+        heroAttackEffect[2].src = "assets/images/Heal.png"
+        setTimeout(animationsOff, 500)
+    }
 }
 function animationsOff(){
     if (defeated == '0'){
-        enemyAttackEffect[0].src = "0"
+        enemyAttackEffect[0].src = ""
+        heroAttackEffect[0].src = ""
     } else if (defeated == '1'){
-        enemyAttackEffect[1].src = "0"
+        enemyAttackEffect[1].src = ""
+        heroAttackEffect[1].src = ""
     } else if (defeated == '2'){
-        enemyAttackEffect[2].src = "0"
+        enemyAttackEffect[2].src = ""
+        heroAttackEffect[2].src = ""
     }
 }
 
