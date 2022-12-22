@@ -156,6 +156,9 @@ header{
     text-align: center;
     font-size: 3rem;
 }
+#spell-button,#attack-button,#heal-button{
+    font-size: 2rem;
+}
 #attack-button{
     background-color: rgb(230, 150, 31);
 }

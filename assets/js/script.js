@@ -217,7 +217,7 @@ function enemyFirstAttack(){
     heroHpFirstRef.innerHTML = heroHpFirst.value;
     heroAttackEffect[0].src = "assets/images/Attack.png"
     setTimeout(animationsOff, 500)
-    cooldownOff();
+    setTimeout(cooldownOff, 1000);;
     if (heroHpFirst.value == '0'){
         heroDead(  )
     }
@@ -227,7 +227,7 @@ function enemySecondAttackOne(){
     heroHpTwoRef.innerHTML = heroHpSecond.value;
     heroAttackEffect[1].src = "assets/images/Attack.png"
     setTimeout(animationsOff, 500)
-    cooldownOff();
+    setTimeout(cooldownOff, 1000);;
     if (heroHpSecond.value == '0'){
         heroDead(  )
     }
@@ -237,7 +237,7 @@ function enemySecondAttackTwo(){
     heroHpTwoRef.innerHTML = heroHpSecond.value;
     heroAttackEffect[1].src = "assets/images/Spell.png"
     setTimeout(animationsOff, 500)
-    cooldownOff();
+    setTimeout(cooldownOff, 1000);;
     if (heroHpSecond.value == '0'){
         heroDead(  )
     }
@@ -247,7 +247,7 @@ function enemySecondAttackThree(){
     enemyHpTwoRef.innerHTML = enemyHpSecond.value;
     enemyAttackEffect[1].src = "assets/images/Heal.png"
     setTimeout(animationsOff, 500)
-    cooldownOff();
+    setTimeout(cooldownOff, 1000);
     if (heroHpSecond.value == '0'){
         heroDead(  )
     }
@@ -257,7 +257,7 @@ function enemyThirdAttack(){
     heroHpThirdRef.innerHTML = heroHpThird.value;
     heroAttackEffect[2].src = "assets/images/Spell.png"
     setTimeout(animationsOff, 500)
-    cooldownOff();
+    setTimeout(cooldownOff, 1000);;
     if (heroHpThird.value == '0'){
         heroDead(  )
     }
@@ -301,14 +301,14 @@ function healAnimation(){
 }
 function animationsOff(){
     if (defeated == '0'){
-        enemyAttackEffect[0].src = ""
-        heroAttackEffect[0].src = ""
+        enemyAttackEffect[0].src = "assets/images/Clear.png"
+        heroAttackEffect[0].src = "assets/images/Clear.png"
     } else if (defeated == '1'){
-        enemyAttackEffect[1].src = ""
-        heroAttackEffect[1].src = ""
+        enemyAttackEffect[1].src = "assets/images/Clear.png"
+        heroAttackEffect[1].src = "assets/images/Clear.png"
     } else if (defeated == '2'){
-        enemyAttackEffect[2].src = ""
-        heroAttackEffect[2].src = ""
+        enemyAttackEffect[2].src = "assets/images/Clear.png"
+        heroAttackEffect[2].src = "assets/images/Clear.png"
     }
 }
 

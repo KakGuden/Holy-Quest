@@ -41,3 +41,12 @@ My goal is to creat a simple game that works as intended without any bugs or unw
 ### Lose game Screen
 
 ### 3 diffrent attack options
+
+# Testing
+Everything works as it should without problem and it responds to diffrent screen sizes without any problem
+
+## Lighthouse
+
+## Validator Test
+
+### Html
