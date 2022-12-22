@@ -1,3 +1,37 @@
+/** diffrent screens */
+const gameScreenOneRef = document.getElementById('game-screen-1')
+const gameScreenTwoRef = document.getElementById('game-screen-2')
+const gameScreenThreeRef = document.getElementById('game-screen-3')
+const introOneRef = document.getElementById('intro')
+const introTwoRef = document.getElementById('intro-2')
+const introThreeRef = document.getElementById('intro-3')
+const endScreenOneRef = document.getElementById('end-screen-1')
+const endScreenTwoRef = document.getElementById('end-screen-2')
+const gameOptionsRef = document.getElementById('game-options')
+/** Enemy Hp */
+const enemyHpFirst = document.getElementById('enemyhp-1')
+const enemyHpFirstRef = document.getElementById("enemy-hp-number-1")
+const enemyHpSecond = document.getElementById('enemyhp-2')
+const enemyHpTwoRef = document.getElementById("enemy-hp-number-2")
+const enemyHpThird = document.getElementById('enemyhp-3')
+const enemyHpThirdRef = document.getElementById("enemy-hp-number-3")
+/** Attack Effects */
+const enemyAttackEffect = document.querySelectorAll(".enemy-animation")
+const heroAttackEffect = document.getElementsByClassName('hero-animation')
+/** Hero Hp */
+const heroHpFirst = document.getElementById('herohp-1')
+const heroHpFirstRef = document.getElementById("hero-hp-number-1")
+const heroHpSecond = document.getElementById('herohp-2')
+const heroHpTwoRef = document.getElementById("hero-hp-number-2")
+const heroHpThird = document.getElementById('herohp-3')
+const heroHpThirdRef = document.getElementById("hero-hp-number-3")
+/** Game Options */
+const cooldownAttackRef = document.getElementById("attack-button")
+const cooldownSpellRef = document.getElementById("spell-button")
+const cooldownHealRef = document.getElementById("heal-button")
+let defeated = '0';
+
+
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
 
@@ -15,14 +49,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function intro(){
     document.getElementById('game-start').style.display = "none"
-    document.getElementById('intro').style.display = 'flex'
+    introOneRef.style.display = "flex"
     setTimeout(startGame, 12000)
 }
 
 function startGame(){
-    document.getElementById('intro').style.display = 'none'
-    document.getElementById('game-screen-1').style.display = "flex"
-    document.getElementById('game-options').style.display = "flex"
+    introOneRef.style.display = "none"
+    gameScreenOneRef.style.display = "flex"
+    gameOptionsRef.style.display = "flex"
 
 }
 function options(attackType) {
@@ -36,20 +70,14 @@ function options(attackType) {
 }
 /** Hp and "lvl" values*/
 
-var enemyHpFirst = document.getElementById('enemyhp-1')
-var enemyHpSecond = document.getElementById('enemyhp-2')
-var enemyHpThird = document.getElementById('enemyhp-3')
-var heroHpFirst = document.getElementById('herohp-1')
-var heroHpSecond = document.getElementById('herohp-2')
-var heroHpThird = document.getElementById('herohp-3')
-var defeated = '0';
 
 /** Attack funtions */
 
 function attack(){
     if (defeated == '0'){
     enemyHpFirst.value = Number(enemyHpFirst.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
-    document.getElementById("enemy-hp-number-1").innerHTML = enemyHpFirst.value;
+    enemyHpFirstRef.innerHTML = enemyHpFirst.value;
+    attackAnimation();
     cooldownOn();
     if (enemyHpFirst.value == '0'){
         enemyDead( )
@@ -58,7 +86,8 @@ function attack(){
     }
     } else if (defeated == '1'){
     enemyHpSecond.value = Number(enemyHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
-    document.getElementById("enemy-hp-number-2").innerHTML = enemyHpSecond.value;
+    enemyHpTwoRef.innerHTML = enemyHpSecond.value;
+    attackAnimation();
     cooldownOn();
     if (enemyHpSecond.value == '0'){
         enemyDead(  )
@@ -67,7 +96,7 @@ function attack(){
         }
     } else if (defeated == '2'){
         enemyHpThird.value = Number(enemyHpThird.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25);
-        document.getElementById("enemy-hp-number-3").innerHTML = enemyHpThird.value;
+        enemyHpThirdRef.innerHTML = enemyHpThird.value;
         cooldownOn();
         if (enemyHpThird.value == '0'){
             enemyDead(  )
@@ -80,7 +109,7 @@ function attack(){
 function spell(){
     if (defeated == '0'){
         enemyHpFirst.value = Number(enemyHpFirst.value) - 30;
-        document.getElementById("enemy-hp-number-1").innerHTML = enemyHpFirst.value;
+        enemyHpFirstRef.innerHTML = enemyHpFirst.value;
         cooldownOn();
         if (enemyHpFirst.value == '0'){
             enemyDead(  )
@@ -89,7 +118,7 @@ function spell(){
         }
     } else if (defeated == '1'){
         enemyHpSecond.value = Number(enemyHpSecond.value) - 30;
-        document.getElementById("enemy-hp-number-2").innerHTML = enemyHpSecond.value;
+        enemyHpTwoRef.innerHTML = enemyHpSecond.value;
         cooldownOn();
         if (enemyHpSecond.value == '0'){
             enemyDead(  )
@@ -98,7 +127,7 @@ function spell(){
             }
         } else if (defeated == '2'){
             enemyHpThird.value = Number(enemyHpThird.value) - 30;
-            document.getElementById("enemy-hp-number-3").innerHTML = enemyHpThird.value;
+            enemyHpThirdRef.innerHTML = enemyHpThird.value;
             cooldownOn();
             if (enemyHpThird.value == '0'){
                 enemyDead(  )
@@ -110,17 +139,17 @@ function spell(){
 function heal(){
     if (defeated == '0'){
         heroHpFirst.value = Number(heroHpFirst.value) + 30;
-        document.getElementById("hero-hp-number-1").innerHTML = heroHpFirst.value;
+        enemyHpFirstRef.innerHTML = heroHpFirst.value;
         cooldownOn();
         setTimeout(enemyFirstAttack, 5000);
     } else if (defeated == '1'){
     heroHpSecond.value = Number(heroHpSecond.value) + 30;
-        document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
+    enemyHpTwoRef.innerHTML = heroHpSecond.value;
         cooldownOn();
         setTimeout(enemySecondAttackThree, 5000);
     } else if (defeated == '2'){
         heroHpThird.value = Number(heroHpThird.value) + 30;
-        document.getElementById("hero-hp-number-3").innerHTML = heroHpThird.value;
+        enemyHpThirdRef.innerHTML = heroHpThird.value;
         cooldownOn();
         setTimeout(enemyThirdAttack, 5000);
     }
@@ -128,25 +157,25 @@ function heal(){
 /** screen changers */
 function enemyDead(){
     if (defeated == '0'){
-    document.getElementById('game-screen-1').style.display = "none"
-    document.getElementById('game-options').style.display = "none"
-    document.getElementById('intro-2').style.display = "flex"
+    gameScreenOneRef.style.display = "none"
+    gameOptionsRef.style.display = "none"
+    introTwoRef.style.display = "flex"
     defeated = 1;
     console.log(defeated)  
     cooldownOff()
-    setTimeout(gameScreenTwo, 10000)
+    setTimeout(gameScreenTwo, 5000)
     } else if (defeated == '1'){
-    document.getElementById('game-screen-2').style.display = "none"
-    document.getElementById('game-options').style.display = "none"
-    document.getElementById('intro-3').style.display = "flex"
+    gameScreenTwoRef.style.display = "none"
+    gameOptionsRef.style.display = "none"
+    introThreeRef.style.display = "flex"
     defeated = 2;
     console.log(defeated)
     cooldownOff()
-    setTimeout(gameScreenThree, 10000)
+    setTimeout(gameScreenThree, 7000)
     } else if (defeated == '2'){
-        document.getElementById('game-screen-3').style.display = "none"
-        document.getElementById('game-options').style.display = "none"
-        document.getElementById('end-screen-1').style.display = "flex"
+        gameScreenThreeRef.style.display = "none"
+        gameOptionsRef.style.display = "none"
+        endScreenOneRef.style.display = "flex"
         defeated = 0;
         console.log(defeated)
         cooldownOff()
@@ -154,31 +183,31 @@ function enemyDead(){
     }
 }
 function heroDead(){
-    document.getElementById('game-screen-1').style.display = "none"
-    document.getElementById('game-screen-2').style.display = "none"
-    document.getElementById('game-screen-3').style.display = "none"
-    document.getElementById('game-options').style.display = "none"
+    gameOptionsRef.style.display = "none"
+    gameScreenTwoRef.style.display = "none"
+    gameScreenThreeRef.style.display = "none"
+    gameOptionsRef.style.display = "none"
     document.getElementById('lose-screen').style.display = "flex"
 }
 
 function gameScreenTwo(){
-    document.getElementById('intro-2').style.display = "none"
-    document.getElementById('game-screen-2').style.display = "flex"
-    document.getElementById('game-options').style.display = "flex"
+    introTwoRef.style.display = "none"
+    gameScreenTwoRef.style.display = "flex"
+    gameOptionsRef.style.display = "flex"
 }
 function gameScreenThree(){
-    document.getElementById('intro-3').style.display = "none"
-    document.getElementById('game-screen-3').style.display = "flex"
-    document.getElementById('game-options').style.display = "flex"
+    introThreeRef.style.display = "none"
+    gameScreenThreeRef.style.display = "flex"
+    gameOptionsRef.style.display = "flex"
 }
 function endScreen(){
-    document.getElementById('end-screen-1').style.display = "none"
-    document.getElementById('end-screen-2').style.display = "flex"
+    endScreenOneRef.style.display = "none"
+    endScreenTwoRef.style.display = "flex"
 }
 /** Enemy attacks */
 function enemyFirstAttack(){
     heroHpFirst.value = Number(heroHpFirst.value) - 20;
-    document.getElementById("hero-hp-number-1").innerHTML = heroHpFirst.value;
+    heroHpFirstRef.innerHTML = heroHpFirst.value;
     cooldownOff();
     if (heroHpFirst.value == '0'){
         heroDead(  )
@@ -186,7 +215,7 @@ function enemyFirstAttack(){
 }
 function enemySecondAttackOne(){
     heroHpSecond.value = Number(heroHpSecond.value) - Math.floor(Math.random() * (35 - 25 + 1) + 25)
-    document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
+    heroHpTwoRef.innerHTML = heroHpSecond.value;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -194,7 +223,7 @@ function enemySecondAttackOne(){
 }
 function enemySecondAttackTwo(){
     heroHpSecond.value = Number(heroHpSecond.value) - 30;
-    document.getElementById("hero-hp-number-2").innerHTML = heroHpSecond.value;
+    heroHpTwoRef.innerHTML = heroHpSecond.value;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -202,7 +231,7 @@ function enemySecondAttackTwo(){
 }
 function enemySecondAttackThree(){
     enemyHpSecond.value = Number(enemyHpSecond.value) + 30;
-    document.getElementById("enemy-hp-number-2").innerHTML = enemyHpSecond.value;
+    enemyHpTwoRef.innerHTML = enemyHpSecond.value;
     cooldownOff();
     if (heroHpSecond.value == '0'){
         heroDead(  )
@@ -210,7 +239,7 @@ function enemySecondAttackThree(){
 }
 function enemyThirdAttack(){
     heroHpThird.value = Number(heroHpThird.value) - 25;
-    document.getElementById("hero-hp-number-3").innerHTML = heroHpThird.value;
+    heroHpThirdRef.innerHTML = heroHpThird.value;
     cooldownOff();
     if (heroHpThird.value == '0'){
         heroDead(  )
@@ -218,18 +247,37 @@ function enemyThirdAttack(){
 }
 /** Making the attacks feel better with effects and cooldown */
 function attackAnimation(){
-
+    if (defeated == '0'){
+        enemyAttackEffect[0].src = "assets/images/Attack.png"
+        setTimeout(animationsOff, 1000)
+    } else if (defeated == '1'){
+        enemyAttackEffect[1].src = "assets/images/Attack.png"
+        setTimeout(animationsOff, 1000)
+    } else if (defeated == '2'){
+        enemyAttackEffect[2].src = "assets/images/Attack.png"
+        setTimeout(animationsOff, 1000)
+    }
 }
 function spellAnimation(){
-
+    
 }
+function animationsOff(){
+    if (defeated == '0'){
+        enemyAttackEffect[0].src = "0"
+    } else if (defeated == '1'){
+        enemyAttackEffect[1].src = "0"
+    } else if (defeated == '2'){
+        enemyAttackEffect[2].src = "0"
+    }
+}
+
 function cooldownOn(){
-    document.getElementById("attack-button").disabled = true;
-    document.getElementById("spell-button").disabled = true;
-    document.getElementById("heal-button").disabled = true;
+    cooldownAttackRef.disabled = true;
+    cooldownSpellRef.disabled = true;
+    cooldownHealRef.disabled = true;
 }
 function cooldownOff(){
-    document.getElementById("attack-button").disabled = false;
-    document.getElementById("spell-button").disabled = false;
-    document.getElementById("heal-button").disabled = false;
+    cooldownAttackRef.disabled = false;
+    cooldownSpellRef.disabled = false;
+    cooldownHealRef.disabled = false;
 }

@@ -95,15 +95,16 @@ header{
 }
 /** player and enemys **/
 .hero-hp{
-    margin-top: 1rem;
     width: 50%;
     height: 3rem;
 }
 .hero{
+    background: url(../images/Hero.png) no-repeat center center;
     margin-left: 10%;
     margin-right: 10%;
     width: 30%;
     height: 30rem;
+    
 }
 .enemy{
     margin-left: 10%;
@@ -111,8 +112,16 @@ header{
     width: 30%;
     height: 30rem;
 }
+#enemy-1{
+    background: url(../images/Undead1.png) no-repeat center center;
+}
+#enemy-2{
+    background: url(../images/Mimic.png) no-repeat center center;
+}
+#enemy-3{
+    background: url(../images/Mage.png) no-repeat center center;
+}
 .enemy-hp{
-    margin-top: 1rem;
     width: 50%;
     height: 3rem;
 }
