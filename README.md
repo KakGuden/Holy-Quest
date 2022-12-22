@@ -19,4 +19,25 @@ My goal is to creat a simple game that works as intended without any bugs or unw
 * Quick and basic game that runs smoothly
 
 
+## Design Choice
+
+### Colors
+*rgb(230, 150, 31) Used for the Header text and Icons as well as background for the attack options
+*rgb(58, 85, 108) Background for the intro screens as well as the place containing the attack options
+*rgb(88, 50, 50) Background for Header  
+
 # Features
+
+## Existing Features
+
+### Start game Screen
+
+### Three "Intro" Screens
+
+### Three game Screens with individual enemys
+
+### Two "End game" Screens
+
+### Lose game Screen
+
+### 3 diffrent attack options
